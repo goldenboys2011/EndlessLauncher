@@ -1,0 +1,1 @@
+venv/bin/pyinstaller --name Launcher --noconsole Launcher.py --collect-submodules PIL
