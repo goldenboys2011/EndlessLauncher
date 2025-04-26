@@ -12,26 +12,26 @@ LAUNCHER_DIR = "launcherData"
 LOGIN_FILE = os.path.join(LAUNCHER_DIR, "login.dat")
 FILE_DOWNLOADS = {
     "./client.jar":                   "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/client.jar",
-    "launcherData/bg.png":          "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/launcherData/bg.png",
-    "launcherData/logo.png":        "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/launcherData/bg.png",
-    "libraries/lwjgl_util.jar":     "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/libraries/lwjgl_util.jar",
-    "libraries/lwjgl.jar":          "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/libraries/lwjgl.jar",
-    "libraries/jinput.jar":         "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/libraries/jinput.jar",
-    "libraries/json-20210307.jar":  "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/libraries/json-20210307.jar",
-    "natives/OpenAL64.dll":         "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/OpenAL64.dll",
-    "natives/OpenAL32.dll":         "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/OpenAL32.dll",
-    "natives/lwjgl64.dll":          "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/lwjgl64.dll",
-    "natives/lwjgl.dll":            "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/lwjgl.dll",
-    "natives/libopenal64.so":       "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/libopenal64.so",
-    "natives/libopenal.so":         "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/libopenal.so",
-    "natives/liblwjgl64.so":         "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/liblwjgl64.so",
-    "natives/liblwjgl.so":           "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/liblwjgl.so",
-    "natives/libjinput-linux64.so": "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/libjinput-linux64.so",
-    "natives/libjinput-linux.so":   "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/libjinput-linux.so",
-    "natives/jinput-raw_64.dll":    "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/jinput-raw_64.dll",
-    "natives/jinput-raw.dll":       "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/jinput-raw.dll",
-    "natives/jinput-dx8_64.dll":    "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/jinput-dx8_64.dll",
-    "natives/jinput-dx8.dll":       "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/jinput-dx8.dll"
+    "launcherData/bg.png":             "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/launcherData/bg.png",
+    "launcherData/logo.png":           "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/launcherData/bg.png",
+    "libraries/lwjgl_util.jar":        "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/libraries/lwjgl_util.jar",
+    "libraries/lwjgl.jar":             "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/libraries/lwjgl.jar",
+    "libraries/jinput.jar":            "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/libraries/jinput.jar",
+    "libraries/json-20210307.jar":     "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/libraries/json-20210307.jar",
+    "natives/OpenAL64.dll":            "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/OpenAL64.dll",
+    "natives/OpenAL32.dll":            "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/OpenAL32.dll",
+    "natives/lwjgl64.dll":             "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/lwjgl64.dll",
+    "natives/lwjgl.dll":               "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/lwjgl.dll",
+    "natives/libopenal64.so":          "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/libopenal64.so",
+    "natives/libopenal.so":            "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/libopenal.so",
+    "natives/liblwjgl64.so":           "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/liblwjgl64.so",
+    "natives/liblwjgl.so":             "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/liblwjgl.so",
+    "natives/libjinput-linux64.so":    "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/libjinput-linux64.so",
+    "natives/libjinput-linux.so":      "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/libjinput-linux.so",
+    "natives/jinput-raw_64.dll":       "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/jinput-raw_64.dll",
+    "natives/jinput-raw.dll":          "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/jinput-raw.dll",
+    "natives/jinput-dx8_64.dll":       "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/jinput-dx8_64.dll",
+    "natives/jinput-dx8.dll":          "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/jinput-dx8.dll"
 }
 
 
@@ -43,17 +43,11 @@ class LauncherApp:
         self.login_method = tk.StringVar(value="OSMC")
         self.username = tk.StringVar()
         self.password = tk.StringVar()
-        
-        
-    
+
     def build_ui(self):
-        # Load bg tile image
+        # Load background tile image
         self.bg_tile = Image.open("launcherData/bg.png").resize((32, 32))
         self.bg_tile_tk = ImageTk.PhotoImage(self.bg_tile)
-
-        # Optional: Load logo
-        # self.logo = Image.open("launcherData/logo.png").resize((200, 100), Image.ANTIALIAS)
-        # self.logo_tk = ImageTk.PhotoImage(self.logo)
 
         canvas = tk.Canvas(self.root, width=300, height=400)
         canvas.pack(fill="both", expand=True)
@@ -83,11 +77,7 @@ class LauncherApp:
         settings_button = tk.Button(frame, text="Settings", command=self.open_settings)
         settings_button.pack()
 
-        creds = self.load_credentials()
-        if creds:
-            self.login_method.set(creds[0])
-            self.username_entry.insert(0, creds[1])
-            self.password_entry.insert(0, creds[2])
+        self.load_credentials()
 
     def open_settings(self):
         new_ram = simpledialog.askstring("Settings", "Enter RAM in MB:", initialvalue=self.ram_mb)
@@ -103,14 +93,13 @@ class LauncherApp:
             f.write(f"{self.login_method.get()}\n{self.username.get()}\n{self.password.get()}")
 
     def load_credentials(self):
-        if not os.path.exists(LOGIN_FILE):
-            return
-        with open(LOGIN_FILE) as f:
-            lines = f.read().splitlines()
-            if len(lines) == 3:
-                self.login_method.set(lines[0])
-                self.username.set(lines[1])
-                self.password.set(lines[2])
+        if os.path.exists(LOGIN_FILE):
+            with open(LOGIN_FILE) as f:
+                lines = f.read().splitlines()
+                if len(lines) == 3:
+                    self.login_method.set(lines[0])
+                    self.username.set(lines[1])
+                    self.password.set(lines[2])
 
     def authenticate_with_osmc(self, username, password):
         url = "https://os-mc.net/api/v1/authenticate"
@@ -143,13 +132,22 @@ class LauncherApp:
 
     def launch_game(self, username, uuid, launch_type):
         print(f"Launching Minecraft for: Username: {username}, UUID: {uuid}, RAM: {self.ram_mb}MB, Type: {launch_type}")
-        java_exec = "javaw" if platform.system() == "Windows" else "java"
+
+        system_platform = platform.system()
+        if system_platform == "Windows":
+            java_exec = os.path.abspath("./java/windows/bin/javaw.exe")
+        elif system_platform == "Linux":
+            java_exec = os.path.abspath("./java/linux/javaLinux")
+        else:
+            self.show_alert(f"Unsupported OS: {system_platform}")
+            return
 
         classpath = os.pathsep.join([
             "client.jar",
-            "libraries/json.jar",
+            "libraries/json-20210307.jar",
             "libraries/lwjgl.jar",
-            "libraries/lwjgl_util.jar"
+            "libraries/lwjgl_util.jar",
+            "libraries/jinput.jar"
         ])
 
         params = [
@@ -164,11 +162,9 @@ class LauncherApp:
         ]
 
         try:
-            root.withdraw()  # Hide the main window for now
-            
-            threading.Thread(target=subprocess.run(params, check=True)).start()
-            
-            root.deiconify()
+            self.root.withdraw()
+            threading.Thread(target=subprocess.run, args=(params,), kwargs={"check": True}).start()
+            self.root.deiconify()
             print("Game exited successfully.")
         except subprocess.CalledProcessError as e:
             print("Game process failed:", e)
@@ -177,11 +173,12 @@ class LauncherApp:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    root.withdraw()  # Hide the main window for now
+    root.withdraw()
     download_window = tk.Toplevel()
     download_window.title("Preparing Launcher")
     download_window.geometry("300x100")
     download_window.resizable(False, False)
+
     label = tk.Label(download_window, text="Downloading required files...")
     label.pack(pady=10)
     progress = ttk.Progressbar(download_window, mode="determinate", maximum=len(FILE_DOWNLOADS))
@@ -201,13 +198,11 @@ if __name__ == "__main__":
                 download_window.update_idletasks()
             except Exception as e:
                 print(f"Error downloading {local_path}: {e}")
-        
-        # Once done, close the popup and show main window
+
         download_window.destroy()
         root.deiconify()
         app = LauncherApp(root)
         app.build_ui()
-
 
     threading.Thread(target=download_and_continue).start()
     root.mainloop()
