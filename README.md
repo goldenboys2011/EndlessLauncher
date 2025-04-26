@@ -2,8 +2,6 @@
 
 A Minecraft Beta Launcher to launch the _'Endlessly'_ minecraft client
 
-> Updates: Added Windows Build, Prepacked Java
-
 **[Straight To Download](#download)**
 
 ## Current Launcher Features
