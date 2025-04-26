@@ -1,6 +1,8 @@
-# EndlessBetaLauncher
+# EndlessBetaLauncher v2.0
 
 A Minecraft Beta Launcher to launch the _'Endlessly'_ minecraft client
+
+> Updates: Added Windows Build, Prepacked Java
 
 **[Straight To Download](#download)**
 
@@ -9,7 +11,7 @@ A Minecraft Beta Launcher to launch the _'Endlessly'_ minecraft client
 - [x] Login with [OSMC](https://os-mc.net)
 - [ ] Login with [golden's SSO ](https://github.com/goldenboys2011/goldens-sso/)
 - [ ] Login with [Microsoft](https://microsoft.com)
-- [x] Launcher Beta 1.7.3 with player Data
+- [x] Launches Beta 1.7.3 with player Data
 - [x] Save user data
 - [ ] Launch Multiple "Clients"
 - [x] Set specific ram allocation
@@ -42,16 +44,10 @@ A Minecraft Beta Launcher to launch the _'Endlessly'_ minecraft client
 
 ## Download
  ### Linux
+
+> Not Prepacked with java! (will be in v2.1)
+
 [EndlessLauncherLinux.tar.gz](https://github.com/user-attachments/files/19847182/EndlessLauncherLinux.tar.gz)
 
  ### Windows
-
->   **_Please wait for version 2.0_**
-
-or
-#### Build it yourself
-1. Get the `src/Launcher.py` & `src/BuildCommand.txt`
-2. Install the dependencies on a _venv_ `pip install pillow requests`
-3. Run the command from BuildCommand.txt
-
-   
+[EndlessLauncherWindows.zip](https://github.com/goldenboys2011/EndlessLauncher/releases/download/Major-Release/EndlessLauncherWindows.zip)
