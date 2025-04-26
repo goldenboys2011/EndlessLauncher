@@ -1,4 +1,4 @@
-# EndlessBetaLauncher v2.0
+# EndlessBetaLauncher
 
 A Minecraft Beta Launcher to launch the _'Endlessly'_ minecraft client
 
