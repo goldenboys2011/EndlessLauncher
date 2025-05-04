@@ -8,7 +8,7 @@ Users can login through:
 
 - [Microsoft](https://microsoft.com) that we (*The Endless Development*) DO **NOT** manage or have any acces on this service.
 - [OS-MC](https://os-mc.net) that we (*The Endless Development*) DO **NOT** manage or have any acces on this service.
-- [golden's sso](https://github.com/goldenboys2011/goldens-sso) an Third-Party **_open source_** SINGLE-SIGHN-ON (*SSO*) made by Odysseas Chryssos (Owner/Developer & Curator of *The Endless Development*). More info about this on the project's [page](https://github.com/goldenboys2011/goldens-sso)
+- [golden's sso](https://github.com/goldenboys2011/goldens-sso) an Third-Party **_open source_** SINGLE-SIGHN-ON (*SSO*) made by Odysseas Chryssos (Owner, Developer & Curator of *The Endless Development*). More info about this on the project's [page](https://github.com/goldenboys2011/goldens-sso)
 
 ## Vulnerabilty/Issue report
 
@@ -29,4 +29,6 @@ Recreation:
 *Way of Discovery:
 
 *Name:
+
+*Additional comments:
 ```
