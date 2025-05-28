@@ -29,13 +29,15 @@ A Minecraft Beta Launcher to launch the _'Endlessly'_ minecraft client
 
 ### Hacks
 
-1. Spider
-2. Auto-hit
-3. No-web
-4. Scaffold
-5. X-Ray
-7. Speed Hack
-8. Jump
+1. Spider  ( Semi working multiplayer )
+2. Auto-hit ( Multiplayer )
+3. No-web ( Multiplayer )
+4. Scaffold ( Currently Singleplayer )
+5. X-Ray ( Multiplayer )
+7. Speed Hack ( Multiplayer (without anticheat) )
+8. Jump ( Multiplayer (without anticheat) )
+9. Jesus ( Multiplayer )
+10. Flight ( Multiplayer )
 
 ### Commands
 
