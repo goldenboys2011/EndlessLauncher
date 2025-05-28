@@ -1,23 +1,29 @@
 # Security Policy
 
-## Data collection
-Absolutely **NO** data are collected during the use of the *EndlessLauncher* or *Endlessly Client*
+> By: The Endless Development
 
-## Login methods
-Users can login through:
+## Data Collection
 
-- [Microsoft](https://microsoft.com) that we (*The Endless Development*) DO **NOT** manage or have any acces on this service.
-- [OS-MC](https://os-mc.net) that we (*The Endless Development*) DO **NOT** manage or have any acces on this service.
-- [golden's sso](https://github.com/goldenboys2011/goldens-sso) an Third-Party **_open source_** SINGLE-SIGHN-ON (*SSO*) made by Odysseas Chryssos (Owner, Developer & Curator of *The Endless Development*). More info about this on the project's [page](https://github.com/goldenboys2011/goldens-sso)
+Absolutely **NO** data are collected during the use of the *EndlessLauncher* or *Endlessly Client*.
 
-## Vulnerabilty/Issue report
+## Login Methods
 
-You can report and issue or vulnerabilty on any part of the *Endless Development* (Client or Launcher) at:
-- `golden@goldencube.dev` || `ody.chryssos@gmail.com`
+Users can log in through:
 
-### Please follor this standar
+- [Microsoft](https://microsoft.com) — a service **NOT** managed or accessed by *The Endless Development*.
+- [OS-MC](https://os-mc.net) — a service **NOT** managed or accessed by *The Endless Development*.
+- [golden's SSO](https://github.com/goldenboys2011/goldens-sso) — a third-party **_open source_** Single Sign-On (*SSO*) created by Odysseas Chryssos (Owner, Developer & Curator of *The Endless Development*). More info is available on the project's [page](https://github.com/goldenboys2011/goldens-sso).
 
-> Optionall fields marked with "*"
+## Vulnerability / Issue Reporting
+
+You can report any issue or vulnerability related to *The Endless Development* (Client or Launcher) by contacting:
+
+- `golden@goldencube.dev`  
+- `ody.chryssos@gmail.com`
+
+### Please follow this standard format when reporting:
+
+> Optional fields marked with "*"
 
 ```
 Title:
