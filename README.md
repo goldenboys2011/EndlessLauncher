@@ -49,6 +49,14 @@ A Minecraft Beta Launcher to launch the _'Endlessly'_ Minecraft client
 | AutoWalk           | Disabled (buggy)                           |
 
 
+### Tools
+
+| Tool        | Description                                        |
+|-------------|----------------------------------------------------|
+| MPProxy     | Custom proxies for in-game anonymity & ban evasion |
+| CustomCapes | Custom Minecraft capes, donated or bought          |
+| Server List | Self-explanatory                                   |
+
 ### Commands
 
 | Command     | Arguments          | Description                                      |
@@ -58,7 +66,6 @@ A Minecraft Beta Launcher to launch the _'Endlessly'_ Minecraft client
 | `speed`     | `<value>`          | Sets speed multiplier for speed hack             |
 | `jump`      | `<value>`          | Sets jump multiplier for jump hack               |
 | `giveitem`  | `<id> <amount>`    | Gives item of `<id>` in `<amount>`               |
-
 
 ## Download
 
