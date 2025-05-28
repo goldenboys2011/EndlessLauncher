@@ -53,7 +53,7 @@ A Minecraft Beta Launcher to launch the _'Endlessly'_ Minecraft client
 
 | Tool        | Description                                        |
 |-------------|----------------------------------------------------|
-| MPProxy     | Custom proxies for in-game anonymity & ban evasion |
+| MPProxy     | Custom proxies for in-game anonymity & ban evasion [[Suggested Proxy List](https://www.freeproxy.world/?type=socks5)] |
 | CustomCapes | Custom Minecraft capes, donated or bought          |
 | Server List | Self-explanatory                                   |
 
