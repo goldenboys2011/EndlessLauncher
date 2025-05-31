@@ -5,7 +5,9 @@ A Minecraft Beta Launcher to launch the _'Endlessly'_ Minecraft client
 [![version](https://img.shields.io/badge/release-2.0-green.svg)](https://github.com/goldenboys2011/EndlessLauncher/releases/tag/2.0)
 [![discord](https://img.shields.io/badge/Discord-join-7289DA.svg)](https://discord.gg/yPpfjwNzVy)
 [![license](https://img.shields.io/badge/License-GPL_3.0-blue.svg)](https://github.com/goldenboys2011/EndlessLauncher/blob/latest/LICENSE)
-[![CodeFactor](https://www.codefactor.io/repository/github/goldenboys2011/endlessclientsource/badge)](https://www.codefactor.io/repository/github/goldenboys2011/endlessclientsource)
+[![Codefactor](https://img.shields.io/badge/Codefactor-A-10b070)](https://www.codefactor.io/repository/github/goldenboys2011/endlessclientsource/)
+
+
 
 **[Straight to Download](#download)**
 
