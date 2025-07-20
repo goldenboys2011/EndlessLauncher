@@ -1,1 +1,5 @@
-venv/bin/pyinstaller --name Launcher --noconsole Launcher.py --collect-submodules PIL
+Windows:
+venv\Scripts\pyinstaller.exe --name Launcher --noconsole Launcher.py
+
+Linux:
+venv/bin/pyinstaller --name Launcher --noconsole Launcher.py
