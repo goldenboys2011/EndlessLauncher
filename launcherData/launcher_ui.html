@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EndlesLauncher</title>
+  <style>
+    :root {
+      --bg: #1a0f23;
+      /** Liquied Glass AH**/
+      --accent: 3a243d;
+      --accent-hover: #ff7b34;
+      --text: #ffffff;
+      --light-gray: #cccccc;
+      --button-bg: #2a1b2e;
+      --button-hover: #3a243d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      background-image: url('./background.png');
+      background-repeat: repeat;
+      background-size: 7%;
+      color: var(--text);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      background-color: rgba(26, 15, 35, 0.85);
+      width: 180px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      border-right: 2px solid var(--accent);
+    }
+
+    .sidebar img {
+      margin-top: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      width: 140px;
+    }
+
+    .sidebar button {
+      width: 100%;
+      padding: 10px;
+      background: linear-gradient(to right,  #1a0f23, var(--accent-hover));
+      color: var(--text);
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .sidebar button:hover {
+      opacity: 0.85;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 30px 40px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 30px;
+    }
+
+    select {
+      background: var(--button-bg);
+      color: var(--light-gray);
+      border: 1px solid var(--accent);
+      padding: 10px 14px;
+      font-size: 16px;
+      border-radius: 6px;
+      appearance: none;
+      cursor: pointer;
+      box-shadow: 0 0 8px rgba(250, 84, 28, 0.4);
+    }
+
+    select:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--accent-hover);
+    }
+
+    .title {
+      font-size: 32pt;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #c8a2ff;
+      text-shadow: 0 0 8px rgba(250, 84, 28, 0.6);
+    }
+
+    .center {
+      margin-top: 15px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 30px 40px;
+    }
+
+    .center button {
+      align-self: center;
+      padding: 14px 32px;
+      font-size: 18px;
+      background: linear-gradient(to right, var(--accent), var(--accent-hover));
+      color: var(--text);
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(250, 84, 28, 0.5);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .center button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px rgba(255, 123, 52, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <img src="./logo.png" alt="EndlesLauncher Logo">
+    <button>Home</button>
+    <button>Settings</button>
+    <button>About</button>
+  </div>
+  <div class="main">
+    <div class="header">
+      <select id="accountDropdown">
+        <option>Select Account</option>
+        <option>+ Add Account</option>
+      </select>
+    </div>
+    <div class="center">
+      <div class="title">EndlesLauncher</div>
+      <button onclick="pyplay.play()">Play Minecraft</button>
+    </div>
+  </div>
+
+  <script src="qrc:///qtwebchannel/qwebchannel.js"></script>
+  <script>
+    new QWebChannel(qt.webChannelTransport, function(channel) {
+      window.pyplay = channel.objects.pyplay;
+    });
+
+    const dropdown = document.getElementById("accountDropdown");
+
+    window.setAccounts = (accounts) => {
+      while (dropdown.options.length > 2) {
+        dropdown.remove(1);
+      }
+
+      accounts.forEach((acc, i) => {
+        const option = document.createElement("option");
+        option.text = `${acc.username} (${acc.uuid.slice(0, 8)})`;
+        dropdown.add(option, dropdown.options.length - 1);
+      });
+    };
+
+    dropdown.addEventListener("change", () => {
+      pyplay.onAccountSelected(dropdown.selectedIndex);
+    });
+  </script>
+</body>
+</html>
