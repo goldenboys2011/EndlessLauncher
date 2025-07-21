@@ -14,9 +14,9 @@ A Minecraft Beta Launcher to launch the _'Endlessly'_ Minecraft client
 
 ## Current Launcher Features
 
-- [x] Login with [OSMC](https://os-mc.net)
+- [ ] Login with [OSMC](https://os-mc.net)
 - [ ] Login with [golden's SSO](https://github.com/goldenboys2011/goldens-sso/)
-- [ ] Login with [Microsoft](https://microsoft.com)
+- [x] Login with [Microsoft](https://microsoft.com)
 - [x] Launches Beta 1.7.3 with player data
 - [x] Save user data
 - [ ] Launch multiple clients
@@ -71,13 +71,6 @@ A Minecraft Beta Launcher to launch the _'Endlessly'_ Minecraft client
 | `giveitem`  | `<id> <amount>`    | Gives item of `<id>` in `<amount>`               |
 
 ## Download
+> Direct Link Discontinued as needed multiple commits for no reason
 
-### Linux
-
-> Not prepackaged with Java (will be included in v2.1)
-
-[EndlessLauncherLinux.tar.gz](https://github.com/user-attachments/files/19847182/EndlessLauncherLinux.tar.gz)
-
-### Windows
-
-[EndlessLauncherWindows.zip](https://github.com/goldenboys2011/EndlessLauncher/releases/download/Major-Release/EndlessLauncherWindows.zip)
+You can download the latest (or older) version of the ``EndlessLauncher`` from the [releases](https://github.com/goldenboys2011/EndlessLauncher/releases) page
