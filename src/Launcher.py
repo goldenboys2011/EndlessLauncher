@@ -1,3 +1,4 @@
+import platform
 import sys
 import os
 import json
@@ -6,7 +7,7 @@ import subprocess
 import requests
 from datetime import datetime, timedelta
 import threading
-
+import patoolib
 from PyQt6.QtCore import QUrl, pyqtSignal, QObject, Qt, QThread, pyqtSlot
 from PyQt6.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QMessageBox, QLabel, QProgressBar
@@ -30,9 +31,9 @@ MINECRAFT_JAR_PATH = "./minecraft/client.jar"
 
 FILE_DOWNLOADS = {
     "minecraft/client.jar": "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/client.jar",
-    "minecraft/launcherData/launcher_ui.html": "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/launcherData/launcher_ui.html",
-    "minecraft/launcherData/background.png": "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/launcherData/background.png",
-    "minecraft/launcherData/logo.png": "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/launcherData/logo.png",
+    "launcherData/launcher_ui.html": "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/launcherData/launcher_ui.html",
+    "launcherData/background.png": "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/launcherData/background.png",
+    "launcherData/logo.png": "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/launcherData/logo.png",
     "minecraft/libraries/lwjgl_util.jar": "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/libraries/lwjgl_util.jar",
     "minecraft/libraries/lwjgl.jar": "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/libraries/lwjgl.jar",
     "minecraft/libraries/jinput.jar": "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/libraries/jinput.jar",
@@ -52,6 +53,24 @@ FILE_DOWNLOADS = {
     "minecraft/natives/jinput-dx8_64.dll": "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/jinput-dx8_64.dll",
     "minecraft/natives/jinput-dx8.dll": "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/natives/jinput-dx8.dll"
 }
+
+java_downloads = {
+    "windows": "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/v4.0/java/windows.rar"
+}
+
+
+def get_platform_key(self):
+    system = platform.system().lower()
+    arch = platform.machine()
+
+    if system in java_downloads:
+        if not arch.endswith("64"):
+            QMessageBox.critical(self, "Unsupported Architecture", "It Looks Like The Architecture You Are Using Is Unsupported By The Launcher. If you want support please visit `github.com/goldenboys2011/EndlessLauncher`")
+            sys.exit("Unsupported Architecture.")
+        return system
+    else:
+        QMessageBox.critical(self, "Unsupported OS", "The `Operating System` you are using is unsuported by this launcher")
+        sys.exit("Unsupported OS.")
 
 class DownloaderThread(QThread):
     progress_updated = pyqtSignal(int)
@@ -79,7 +98,42 @@ class DownloaderThread(QThread):
                 self.label_updated.emit(f"Downloaded {os.path.basename(path)}")
             except Exception as e:
                 self.label_updated.emit(f"Error downloading {os.path.basename(path)}: {e}")
+    
+        
         self.finished.emit()
+
+class JavaSetupThread(QThread):
+    label_updated = pyqtSignal(str)
+    finished = pyqtSignal()
+
+    def run(self):
+        platforma = get_platform_key(self)
+        extract_path = os.path.abspath("java")
+
+        if os.path.isdir(extract_path):
+            self.label_updated.emit("Java already extracted.")
+        else:
+            try:
+                url = java_downloads[platforma]
+                self.label_updated.emit("Downloading Java...")
+                r = requests.get(url, stream=True)
+                r.raise_for_status()
+                with open("java.rar", "wb") as f:
+                    for chunk in r.iter_content(chunk_size=8192):
+                        if chunk:
+                            f.write(chunk)
+
+                self.label_updated.emit("Extracting Java...")
+                os.makedirs(extract_path, exist_ok=True)
+                patoolib.extract_archive(os.path.abspath("java.rar"), outdir=extract_path)
+                os.remove(os.path.abspath("java.rar"))
+
+                self.label_updated.emit("Java setup complete.")
+            except Exception as e:
+                self.label_updated.emit(f"Java setup failed: {e}")
+        
+        self.finished.emit()
+
 
 class Downloader(QWidget):
     def __init__(self, on_complete_callback):
@@ -104,6 +158,23 @@ class Downloader(QWidget):
         self.thread.start()
 
     def on_finished(self):
+        platforma = get_platform_key(self)
+
+        if os.path.isdir(os.path.abspath("java")):
+            print(f"The '{os.path.abspath("java")}' directory exists!")
+        else:
+            url = java_downloads[platforma]
+            r = requests.get(url, stream=True)
+            r.raise_for_status()
+            with open("java.rar", "wb") as f:
+                for chunk in r.iter_content(chunk_size=8192):
+                    if chunk:
+                        f.write(chunk)
+
+            extract_path = os.path.abspath("java") 
+            os.makedirs(extract_path, exist_ok=True)
+            patoolib.extract_archive(os.path.abspath("java.rar"), outdir=extract_path)
+            os.remove(os.path.abspath("java.rar"))
         self._on_complete()
         self.close()
 
@@ -296,8 +367,11 @@ class WebMainWindow(QWidget):
             os.path.abspath("minecraft/libraries/person/json-20210307.jar"),
         ])
 
+        java_path = os.path.abspath("java/bin/java.exe")
+        jre_base = os.path.abspath("java")  # folder containing bin/, lib/, etc.
+
         params = [
-            "java",
+            java_path,
             "-Xmx1024M",
             "-Djava.library.path=" + os.path.abspath("minecraft/natives"),
             "-classpath", classpath,
@@ -305,11 +379,20 @@ class WebMainWindow(QWidget):
             username
         ]
 
+        # 🔧 Setup the environment to make Java 7 portable
+        env = os.environ.copy()
+        env["JAVA_HOME"] = jre_base
+        env["PATH"] = os.pathsep.join([
+            os.path.join(jre_base, "bin", "server"),
+            os.path.join(jre_base, "bin"),
+            env.get("PATH", "")
+        ])
+
         print(f"Launching Minecraft Beta 1.7.3 with command:\n{' '.join(params)}")
 
         def run_game():
             try:
-                subprocess.run(params, check=True)
+                subprocess.run(params, check=True, env=env)
                 print("Game exited successfully.")
             except subprocess.CalledProcessError as e:
                 print("Game launch failed:", e)
@@ -318,7 +401,7 @@ class WebMainWindow(QWidget):
         self.hide()
         threading.Thread(target=run_game, daemon=True).start()
         self.show()
-
+        
     def open_login(self):
         self.login_win = LoginWindow(self.handle_login_result)
         self.login_win.show()
