@@ -14,9 +14,9 @@ A Minecraft Beta Launcher to launch the _'Endlessly'_ Minecraft client
 
 ## Current Launcher Features
 
-- [x] Login with [OSMC](https://os-mc.net)
+- [ ] Login with [OSMC](https://os-mc.net)
 - [ ] Login with [golden's SSO](https://github.com/goldenboys2011/goldens-sso/)
-- [ ] Login with [Microsoft](https://microsoft.com)
+- [x] Login with [Microsoft](https://microsoft.com)
 - [x] Launches Beta 1.7.3 with player data
 - [x] Save user data
 - [ ] Launch multiple clients
