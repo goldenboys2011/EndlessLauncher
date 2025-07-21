@@ -55,7 +55,7 @@ FILE_DOWNLOADS = {
 }
 
 java_downloads = {
-    "windows": "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/v4.0/java/windows.rar"
+    "windows": "https://github.com/goldenboys2011/EndlessLauncher/raw/refs/heads/latest/java/windows.rar"
 }
 
 
