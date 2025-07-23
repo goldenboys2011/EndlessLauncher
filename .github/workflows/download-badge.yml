@@ -20,9 +20,18 @@ jobs:
       - name: Get download count for Launcher.exe
         id: get_downloads
         run: |
-          COUNT=$(curl -s https://api.github.com/repos/goldenboys2011/EndlessLauncher/releases \
-            | jq '[.[] | .assets[] | select(.name == "Launcher.exe") | .download_count] | add')
+          API_RESPONSE=$(curl -s https://api.github.com/repos/goldenboys2011/EndlessLauncher/releases)
+          
+          if echo "$API_RESPONSE" | jq -e 'type == "array"' > /dev/null; then
+            COUNT=$(echo "$API_RESPONSE" | jq '[.[] | .assets[] | select(.name == "Launcher.exe") | .download_count] | add')
+          else
+            echo "❌ GitHub API returned an error:"
+            echo "$API_RESPONSE"
+            COUNT=0
+          fi
+      
           echo "count=$COUNT" >> $GITHUB_OUTPUT
+
 
       - name: Generate badge JSON
         run: |
