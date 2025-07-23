@@ -2,7 +2,7 @@ name: Update Download Badge
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # every 30 minutes
+    - cron: '*/5 * * * *'  # every 5 minutes
   workflow_dispatch:        # manual trigger
 
 jobs:
@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }}  # Needed to allow push with custom PAT
 
       - name: Install jq
         run: sudo apt-get install -y jq
@@ -32,13 +34,9 @@ jobs:
             "color": "brightgreen"
           }' > assets/downloads-badge.json
 
-      - name: Commit & push badge
-        env:
-          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@users.noreply.github.com"
-          git add assets/downloads-badge.json
-          git commit -m "Update downloads badge" || exit 0
-          git remote set-url origin https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/goldenboys2011/EndlessLauncher.git
-          git push origin HEAD
+      - name: Commit and push badge
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: 'assets/downloads-badge.json'
+          message: 'Update downloads badge'
+          default_author: github_actions
