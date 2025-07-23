@@ -1,0 +1,38 @@
+name: Update Download Badge
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # every 30 minutes
+  workflow_dispatch:        # manual trigger
+
+jobs:
+  update-badge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Get download count
+        run: |
+          curl -s https://api.github.com/repos/goldenboys2011/EndlessLauncher/releases \
+          | jq '[.[] | .assets[] | select(.name == "Launcher.exe") | .download_count] | add' \
+          > downloads.txt
+
+      - name: Generate badge JSON
+        run: |
+          COUNT=$(cat downloads.txt)
+          mkdir -p assets
+          echo '{
+            "schemaVersion": 1,
+            "label": "Launcher Downloads",
+            "message": "'$COUNT'",
+            "color": "brightgreen"
+          }' > assets/downloads-badge.json
+
+      - name: Commit & push badge
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add assets/downloads-badge.json
+          git commit -m "Update downloads badge"
+          git push
