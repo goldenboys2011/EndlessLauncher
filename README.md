@@ -75,3 +75,11 @@ A Minecraft Beta Launcher to launch the _'Endlessly'_ Minecraft client
 > Direct Link Discontinued as needed multiple commits for no reason
 
 You can download the latest (or older) version of the ``EndlessLauncher`` from the [releases](https://github.com/goldenboys2011/EndlessLauncher/releases) page
+
+## Special Thanks / Contributors
+
+Big thanks to the amazing people who helped shape the Endlessly client and launcher ❤️
+
+| Name             | Contribution                              |
+|------------------|-------------------------------------------|
+| YawningCheese99🧀   | BoatSpeed Hack, development help & testing |
