@@ -38,6 +38,8 @@ A Minecraft Beta Launcher to launch the _'Endlessly'_ Minecraft client
 |--------------------|--------------------------------------------|
 | Spider             | Semi-working in multiplayer                |
 | Auto-hit           | Works in multiplayer                       |
+| Auto-eat           | Works in multiplayer                       |
+| Auto-tool           | Works in multiplayer                       |
 | No-web             | Works in multiplayer                       |
 | Scaffold           | Singleplayer only                          |
 | X-Ray              | Works in multiplayer                       |
@@ -50,6 +52,7 @@ A Minecraft Beta Launcher to launch the _'Endlessly'_ Minecraft client
 | Infinite Resources | Singleplayer only                          |
 | Fullbright         | Works in multiplayer                       |
 | FreeCam            | Works in multiplayer                       |
+| EntitySpeed        | Works in multiplaye (hard to use)          |
 | AutoWalk           | Disabled (buggy)                           |
 
 
