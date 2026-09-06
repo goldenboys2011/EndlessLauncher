@@ -41,8 +41,8 @@ A Minecraft Beta Launcher to launch the _'Endlessly'_ Minecraft client
 | Auto-eat           | Works in multiplayer                       |
 | Auto-tool           | Works in multiplayer                       |
 | No-web             | Works in multiplayer                       |
-| Scaffold           | Singleplayer only                          |
-| X-Ray              | Works in multiplayer                       |
+| Scaffold           | Works in multiplayer                          |
+| X-Ray              | Not properly implemented                       |
 | Speed Hack         | Multiplayer (no anticheat)                 |
 | Jump Boost         | Multiplayer (no anticheat)                 |
 | Jesus              | Works in multiplayer                       |
